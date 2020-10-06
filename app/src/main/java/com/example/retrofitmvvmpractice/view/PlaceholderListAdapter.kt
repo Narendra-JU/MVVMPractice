@@ -18,9 +18,17 @@ class PlaceholderListAdapter(var placeholders:ArrayList<Placeholder>):RecyclerVi
 
     class PlaceholderViewHolder(view: View): RecyclerView.ViewHolder(view){
         val placeholderName=view.name
+        var placeholderId=view.name_id
+        val placeholderUsername=view.username
+        val placeholderEmail=view.email
+        val placeHolderPhoneno=view.phoneno
+
         fun bind(placeholder: Placeholder){
             placeholderName.text=placeholder.name
-
+            placeholderId.text= placeholder.id.toString()
+            placeholderUsername.text="(${placeholder.username})"
+            placeholderEmail.text=placeholder.email
+            placeHolderPhoneno.text=placeholder.phone
         }
     }
 
