@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RetrofitMVVMPractice</string>
+    <string name="error_text">Error occured while Loading Data</string>
+</resources>
