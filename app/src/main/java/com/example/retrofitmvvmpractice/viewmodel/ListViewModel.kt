@@ -11,7 +11,7 @@ import io.reactivex.schedulers.Schedulers
 
 class ListViewModel : ViewModel() {
 
-    private val placeholderService=PlaceholderService()
+    private val placeholderService=PlaceholderService()//the Placeholder Swevice contains the Retrofit call in the init block
     private val disposable=CompositeDisposable()//says that the viewmodel is using rxjava
 
     val placeholders = MutableLiveData<List<Placeholder>>()

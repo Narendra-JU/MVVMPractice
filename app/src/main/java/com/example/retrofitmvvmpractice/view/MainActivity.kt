@@ -6,6 +6,7 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.retrofitmvvmpractice.R
 import com.example.retrofitmvvmpractice.viewmodel.ListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
         viewModel = ViewModelProviders.of(this).get(ListViewModel::class.java)
         viewModel.refresh()
 
@@ -27,7 +30,11 @@ class MainActivity : AppCompatActivity() {
             adapter = placeholderAdapter
 
         }
+        swipeRefreshLayout.setOnRefreshListener {
+            swipeRefreshLayout.isRefreshing=false
+            viewModel.refresh()
 
+        }
         observeViewModel()
 
 

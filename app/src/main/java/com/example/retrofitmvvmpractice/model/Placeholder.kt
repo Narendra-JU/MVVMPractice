@@ -1,5 +1,7 @@
 package com.example.retrofitmvvmpractice.model
 
+import com.example.retrofitmvvmpractice.dummy.Address
+import com.example.retrofitmvvmpractice.dummy.Geo
 import com.google.gson.annotations.SerializedName
 
 data class Placeholder(
@@ -14,6 +16,19 @@ data class Placeholder(
     @SerializedName("phone")
     val phone:String?,
     @SerializedName("website")
-    val website:String?
+    val website:String?,
+    @SerializedName("address")
+    val address: Address
 ) {
 }
+
+data class Address(
+    @SerializedName("city")
+    val city: String,
+    @SerializedName("street")
+    val street: String,
+    @SerializedName("suite")
+    val suite: String,
+    @SerializedName("zipcode")
+    val zipcode: String
+)

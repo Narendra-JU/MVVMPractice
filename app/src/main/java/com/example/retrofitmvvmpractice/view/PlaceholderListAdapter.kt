@@ -22,6 +22,7 @@ class PlaceholderListAdapter(var placeholders:ArrayList<Placeholder>):RecyclerVi
         val placeholderUsername=view.username
         val placeholderEmail=view.email
         val placeHolderPhoneno=view.phoneno
+        val placeholderCity=view.city
 
         fun bind(placeholder: Placeholder){
             placeholderName.text=placeholder.name
@@ -29,6 +30,7 @@ class PlaceholderListAdapter(var placeholders:ArrayList<Placeholder>):RecyclerVi
             placeholderUsername.text="(${placeholder.username})"
             placeholderEmail.text=placeholder.email
             placeHolderPhoneno.text=placeholder.phone
+            placeholderCity.text=placeholder.address.city
         }
     }
 
